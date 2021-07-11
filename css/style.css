@@ -25,11 +25,16 @@
 *::after,
 *::before {
   box-sizing: inherit;
-  font-size: 62.5%;
 }
 
 html {
   box-sizing: border-box;
+  font-size: 62.5%;
+}
+@media only screen and (max-width: 68.75em) {
+  html {
+    font-size: 50%;
+  }
 }
 
 body {
@@ -54,6 +59,12 @@ body {
   align-items: center;
   justify-content: center;
 }
+@media only screen and (max-width: 31.25em) {
+  .search {
+    order: 1;
+    flex: 0 0 100%;
+  }
+}
 .search__input {
   font-family: inherit;
   font-size: inherit;
@@ -64,6 +75,12 @@ body {
   border-radius: 100px;
   width: 90%;
   margin-right: -3.5rem;
+}
+@media only screen and (max-width: 31.25em) {
+  .search__input {
+    margin-right: 0;
+    position: relative;
+  }
 }
 .search__input:focus {
   outline: none;
@@ -92,12 +109,18 @@ body {
   width: 2rem;
   fill: var(--color-grey-dark-3);
 }
+@media only screen and (max-width: 31.25em) {
+  .search__icon {
+    transform: translateX(-3rem);
+    position: absolute;
+    top: 8rem;
+  }
+}
 
 .user-nav {
   display: flex;
   align-items: center;
   align-self: stretch;
-  font-size: 3rem;
 }
 .user-nav > * {
   padding: 0 2rem;
@@ -137,15 +160,32 @@ body {
   margin-right: 1rem;
 }
 .side-nav {
-  font-size: 4.4rem;
+  font-size: 1.5rem;
   list-style: none;
   margin-top: 3.5rem;
+}
+@media only screen and (max-width: 56.25em) {
+  .side-nav {
+    display: flex;
+    margin: 0;
+  }
 }
 .side-nav__item {
   position: relative;
 }
 .side-nav__item:not(:last-child) {
   margin-bottom: 0.5rem;
+}
+@media only screen and (max-width: 56.25em) {
+  .side-nav__item:not(:last-child) {
+    margin-bottom: 0;
+  }
+}
+@media only screen and (max-width: 56.25em) {
+  .side-nav__item {
+    flex: 1;
+    align-self: center;
+  }
 }
 .side-nav__item::before {
   z-index: 0;
@@ -177,11 +217,31 @@ body {
   display: flex;
   align-items: center;
 }
+@media only screen and (max-width: 56.25em) {
+  .side-nav__link:link, .side-nav__link:visited {
+    justify-content: center;
+    padding: 2rem;
+  }
+}
+@media only screen and (max-width: 41.25em) {
+  .side-nav__link:link, .side-nav__link:visited {
+    flex-direction: column;
+    padding: 1.5rem 0.5rem;
+  }
+}
 .side-nav__icon {
   width: 1.75rem;
   height: 1.75rem;
   margin-right: 2rem;
   fill: currentColor;
+}
+@media only screen and (max-width: 41.25em) {
+  .side-nav__icon {
+    margin-right: 0;
+    margin-bottom: 0.7rem;
+    width: 1.4rem;
+    height: 1.4rem;
+  }
 }
 
 .legal {
@@ -189,6 +249,11 @@ body {
   text-align: center;
   padding: 2.5rem;
   color: var(--color-grey-light-4);
+}
+@media only screen and (max-width: 56.25em) {
+  .legal {
+    display: none;
+  }
 }
 
 .gallery {
@@ -210,6 +275,12 @@ body {
   text-transform: uppercase;
   letter-spacing: 1px;
   padding: 1.5rem 3rem;
+}
+@media only screen and (max-width: 41.25em) {
+  .overview__heading {
+    font-size: 2rem;
+    padding: 1.25rem 2rem;
+  }
 }
 .overview__stars {
   margin-right: auto;
@@ -239,10 +310,20 @@ body {
   justify-content: center;
   align-self: stretch;
 }
+@media only screen and (max-width: 41.25em) {
+  .overview__rating {
+    padding: 0 1.5rem;
+  }
+}
 .overview__rating-average {
   font-size: 2.5rem;
   font-weight: 300;
   margin-bottom: -3px;
+}
+@media only screen and (max-width: 41.25em) {
+  .overview__rating-average {
+    font-size: 2rem;
+  }
 }
 .overview__rating-count {
   font-size: 0.8rem;
@@ -296,7 +377,7 @@ body {
 .list {
   list-style: none;
   margin: 3rem 0;
-  font-size: 2rem;
+  font-size: 1.5rem;
   padding: 3rem 0 0 0;
   border-top: var(--border-bottom);
   display: flex;
@@ -321,7 +402,7 @@ body {
 }
 
 .recommend {
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   color: var(--color-grey-dark-3);
   display: flex;
   align-items: center;
@@ -331,6 +412,9 @@ body {
 .recommend__count {
   margin-right: auto;
 }
+.recommend__friends {
+  display: flex;
+}
 .recommend__photo {
   box-sizing: content-box;
   width: 4rem;
@@ -339,7 +423,7 @@ body {
   border: 3px solid #fff;
 }
 .recommend__photo:not(:last-child) {
-  margin-right: -1.5rem;
+  margin-right: -2rem;
 }
 
 .review {
@@ -348,6 +432,12 @@ body {
   padding: 3rem;
   position: relative;
   overflow: hidden;
+}
+@media only screen and (max-width: 56.25em) {
+  .review {
+    padding: 2rem;
+    margin-bottom: 2rem;
+  }
 }
 .review:not(:last-child) {
   margin-bottom: 3.5rem;
@@ -403,6 +493,11 @@ body {
   padding: 3.5rem 0;
   text-align: center;
 }
+@media only screen and (max-width: 56.25em) {
+  .cta {
+    padding: 2.5rem 0;
+  }
+}
 .cta__book-now {
   text-transform: uppercase;
   font-weight: 300;
@@ -411,7 +506,7 @@ body {
 }
 
 .btn {
-  font-size: 2rem;
+  font-size: 1.5rem;
   border: none;
   font-weight: 300;
   text-transform: uppercase;
@@ -458,6 +553,13 @@ body {
   box-shadow: var(--shadow-dark);
   min-height: 50rem;
 }
+@media only screen and (max-width: 75em) {
+  .container {
+    margin: 0;
+    max-width: 100%;
+    width: 100%;
+  }
+}
 
 .header {
   height: 7rem;
@@ -466,11 +568,24 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 2rem;
+  font-size: 1.6rem;
+}
+@media only screen and (max-width: 31.25em) {
+  .header {
+    flex-wrap: wrap;
+    height: 12rem;
+    align-content: space-around;
+  }
 }
 
 .content {
   display: flex;
+}
+@media only screen and (max-width: 56.25em) {
+  .content {
+    flex-direction: column;
+    margin-right: 0;
+  }
 }
 
 .sidebar {
@@ -492,9 +607,19 @@ body {
   background-color: var(--color-grey-light-1);
   border: var(--border-bottom);
 }
+@media only screen and (max-width: 56.25em) {
+  .detail {
+    padding: 2rem;
+  }
+}
+@media only screen and (max-width: 41.25em) {
+  .detail {
+    flex-direction: column;
+  }
+}
 
 .description {
-  font-size: 2.3rem;
+  font-size: 1.6rem;
   background-color: #fff;
   box-shadow: var(--shadow-light);
   padding: 3rem 3rem 1rem 3rem;
@@ -503,9 +628,20 @@ body {
   display: flex;
   flex-direction: column;
 }
+@media only screen and (max-width: 56.25em) {
+  .description {
+    margin-right: 0;
+    margin-bottom: 2rem;
+  }
+}
+@media only screen and (max-width: 41.25em) {
+  .description {
+    flex-direction: column;
+  }
+}
 
 .user-reviews {
-  font-size: 3.5rem;
+  font-size: 1.5rem;
   flex: 1;
   display: flex;
   flex-direction: column;
